@@ -20,6 +20,6 @@ print("Assinatura válida?", is_valid)
 second_private_key = SigningKey.generate(curve=NIST384p)  # Gera a chave privada
 second_public_key = second_private_key.get_verifying_key()       # Obtém a chave pública
 
-# second_signature = second_private_key.sign(message)
+second_signature = second_private_key.sign(message)
 
-print(f"Test: {second_public_key.verify(signature, message)}")
+print(f"Test: {second_public_key.verify(second_signature, message)}")
